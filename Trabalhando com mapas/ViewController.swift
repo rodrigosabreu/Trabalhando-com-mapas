@@ -17,7 +17,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        
         let latitude: CLLocationDegrees = -23.586974
         let longetude: CLLocationDegrees = -46.657355
         
@@ -35,6 +35,15 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         //exibir regiao no mapa
         mapa.setRegion(regiao, animated: true)
+        
+        //configurar anotacao
+        let anotacao = MKPointAnnotation()
+        
+        anotacao.coordinate = localizacao
+        anotacao.title = "Parque do Ibirapuera"
+        anotacao.subtitle = "O Parque Ibirapuera é o mais importante parque urbano da cidade de São Paulo, no Brasil."
+        
+        mapa.addAnnotation(anotacao)
         
     }
 
